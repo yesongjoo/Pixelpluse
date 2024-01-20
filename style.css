@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #face59;
+  --secondary-color: #f8f8f8;
+  --text-dark: #111827;
+  --text-light: #6b7280;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Playfair Display", serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* font-size: 10px;
+	10px / 16px = 0.625 =62.5%
+	Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+  overflow-x: hidden;
+  /* scroll-behavior: smooth; */
+}
+
+body {
+  line-height: 1;
+  font-weight: 500;
+  color: var(--text-light);
+  /* Only works if there is nothing absolutely positiond in relation to body */
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+p {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+/* 이미지 그리드안에 알맞게 넣기 위해 필요 */
+img {
+  display: flex;
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 1.6rem;
+  max-width: 120rem;
+}
+
+.btn {
+  font-size: 1.6rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  background-color: var(--primary-color);
+  padding: 1.2rem 3.5rem;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.title {
+  font-size: 4rem;
+  font-weight: 500;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 2rem;
+  margin-bottom: 1.6rem;
+  color: var(--text-light);
+}
+
+.text {
+  font-size: 1.6rem;
+  color: var(--text-light);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* **************************************** */
+/*  Header */
+/* **************************************** */
+.header {
+  margin: 0 auto;
+  padding: 3.2rem 3.2rem;
+  display: flex;
+  justify-content: space-between;
+  max-width: 120rem;
+}
+
+.nav_logo a {
+  text-decoration: none;
+  font-size: 2.4rem;
+  font-weight: 600;
+  font-family: "Playfair Display", serif;
+  color: var(--text-dark);
+}
+
+.nav_links {
+  display: flex;
+  gap: 2rem;
+}
+
+.link {
+  list-style: none;
+}
+
+.link a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 1.6rem;
+}
+
+.nav_menu_btn {
+  display: none;
+}
+
+/* **************************************** */
+/* section_home */
+/* **************************************** */
+
+.section_home {
+  padding: 8rem 0;
+}
+
+.grid_home_content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+  margin-bottom: 6.4rem;
+}
+
+.home_title {
+  font-size: 5.6rem;
+  font-weight: 500;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+  line-height: 1.4;
+}
+
+.home_description {
+  margin-bottom: 6.4rem;
+}
+
+.grid_home_img {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 40rem;
+  gap: 2rem;
+}
+
+.home_img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.mb1 {
+  margin-bottom: 1.6rem;
+}
+
+/* **************************************** */
+/* section_about */
+/* **************************************** */
+
+.section_about {
+  padding: 8rem 0;
+}
+
+.grid_about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+  align-items: center;
+}
+
+.about_img {
+  max-width: 45rem;
+}
+
+.about_description {
+  margin: 3.2rem 0;
+}
+
+.flex_about {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3.2rem;
+  padding: 6.4rem 0;
+  border-bottom: 1px solid var(--text-light);
+}
+
+.about_card {
+  display: flex;
+  gap: 1.6rem;
+}
+
+/* .ri-pen-nib-line,
+.ri-layout-masonry-line,
+.ri-checkbox-line {
+  height: 5.8rem;
+  width: 5.8rem;
+} */
+
+.circle {
+  /* height: 3rem;
+  width: 3rem; */
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  border-radius: 50%;
+  background-color: gray;
+  /* align-items: top; */
+}
+
+.card_title {
+  font-size: 2rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+  font-weight: 500;
+  margin-bottom: 1.6rem;
+}
+
+/* **************************************** */
+/* section_portfolio */
+/* **************************************** */
+
+.section_portfolio {
+  padding: 8rem 0;
+}
+
+.gride_porfolio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+}
+
+.view_all_wrap {
+  display: flex;
+  gap: 1rem;
+}
+
+.view_all_link,
+.ri-arrow-right-line {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  line-height: 1.5;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.portfolio_pictures {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3.2rem;
+  margin-top: 6.4rem;
+}
+
+.portfolio_pictures img {
+  border-radius: 5px;
+  box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* **************************************** */
+/* section_client */
+/* **************************************** */
+
+.section_client {
+  padding: 8rem 0;
+}
+
+.client_title_wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.view_all_wrap {
+  align-items: center;
+}
+
+.slider {
+  margin-top: 6.4rem;
+}
+
+.client_pic {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 3.5rem;
+}
