@@ -3,34 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
+    <!-- <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
       rel="stylesheet"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="generel.css" />
+    <link rel="stylesheet" href="queries.css" />
+    <script defer src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
     <title>Web Design Mastery | PixelPulse</title>
   </head>
   <body>
-    <header class="header">
-      <div class="nav_logo"><a href="#">PixelPluse</a></div>
-      <nav>
-        <ul class="nav_links" id="nav-links">
-          <li class="link"><a href="#home">Home</a></li>
-          <li class="link"><a href="#about">About</a></li>
-          <li class="link"><a href="#portfolio">Portfolio</a></li>
-          <li class="link"><a href="#hclient">Client</a></li>
-          <li class="link"><a href="#news">News</a></li>
-          <li class="link"><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="nav_menu_btn">
-        <i class="ri-menu-3-line"></i>
-        <i class="ri-close-line"></i>
-      </div>
-    </header>
+    <div class="header_container">
+      <header class="header">
+        <div class="nav_logo"><a href="#">PixelPluse</a></div>
+        <nav class="main_nav">
+          <ul class="nav_links" id="nav-links">
+            <li class="link"><a href="#home">Home</a></li>
+            <li class="link"><a href="#about">About</a></li>
+            <li class="link"><a href="#portfolio">Portfolio</a></li>
+            <li class="link"><a href="#client">Client</a></li>
+            <li class="link"><a href="#news">News</a></li>
+            <li class="link"><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="btn_mobile_nav">
+          <ion-icon class="icon_mobile_nav" name="menu-outline"></ion-icon>
+          <ion-icon class="icon_mobile_nav" name="close-outline"></ion-icon>
+        </div>
+      </header>
+    </div>
 
     <main>
-      <section class="section_home">
+      <section class="section_home" id="home">
         <div class="container">
           <div class="grid_home_content">
             <div>
@@ -53,13 +62,13 @@
         </div>
       </section>
 
-      <section class="section_about">
+      <section class="section_about" id="about">
         <div class="container">
           <div class="grid_about">
             <img class="about_img" src="assets/about.jpg" alt="" />
             <div class="about_description">
-              <p class="subtitle">About us</p>
-              <p class="title">Design & Develop Better Solution</p>
+              <p class="subtitle">About Us</p>
+              <h2 class="title">Design & Develop Better Solution</h2>
               <p class="text about_description">
                 Our team of creative minds, tech-savvy developers, and digital
                 strategists come together to deliver comprehensive solutions
@@ -70,10 +79,11 @@
               <button class="btn">Learn More</button>
             </div>
           </div>
-          <div class="flex_about">
+          <div class="about_cards">
             <div class="about_card">
-              <span class="circle"></span>
-              <!-- <i class="ri-pen-nib-line"></i> -->
+                <div class="circle">
+                  <ion-icon class="card_icon" name="brush-outline"></ion-icon>
+                </div>
               <div>
                 <h4 class="card_title">Design</h4>
                 <p class="text">
@@ -83,34 +93,37 @@
               </div>
             </div>
             <div class="about_card">
-              <!-- <i class="ri-layout-masonry-line"></i> -->
+              <div class="circle">
+                <ion-icon class="card_icon" name="layers-outline"></ion-icon>
+              </div>
               <div>
                 <h4 class="card_title">Development</h4>
                 <p class="text">
-                  Our designers and content creators are committed to delivering
-                  visually stunning and engaging digital content.
+                  We stay at the forefront of technological advancements, ensuring that your digital presence beautiful and performant.
                 </p>
               </div>
             </div>
             <div class="about_card">
-              <!-- <i class="ri-checkbox-line"></i> -->
+              <div class="circle">
+                <ion-icon class="card_icon" name="checkbox-outline"></ion-icon>
+              </div>
               <div>
                 <h4 class="card_title">Testing & QA</h4>
                 <p class="text">
-                  Our designers and content creators are committed to delivering
-                  visually stunning and engaging digital content.
+                  We understand that your digital presence should not just look good; it should deliver traffic, engagement, and conversions.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="section_porfolio">
+
+      <section class="section_portfolio" id="portfolio">
         <div class="container">
-          <div class="gride_porfolio">
+          <div class="grid_portfolio">
             <div>
               <p class="subtitle">Portfolio</p>
-              <p class="title">Our Case Studies</p>
+              <h2 class="title">Our Case Studies</h2>
             </div>
             <div>
               <p class="text">
@@ -120,53 +133,252 @@
               </p>
               <div class="view_all_wrap">
                 <a class="view_all_link" href="#">View All </a>
-                <a href="view_all_lin"><i class="ri-arrow-right-line"></i></a>
+                <ion-icon
+                  class="arrow_icon"
+                  name="arrow-forward-outline"
+                ></ion-icon>
               </div>
             </div>
           </div>
           <div class="portfolio_pictures">
-            <img src="assets/portfolio-1.jpg" alt="" />
-            <img src="assets/portfolio-2.jpg" alt="" />
-            <img src="assets/portfolio-3.jpg" alt="" />
+            <img class="portfolio_picture" src="assets/portfolio-1.jpg" alt="" />
+            <img class="portfolio_picture" src="assets/portfolio-2.jpg" alt="" />
+            <img class="portfolio_picture" src="assets/portfolio-3.jpg" alt="" />
           </div>
         </div>
       </section>
 
-      <section class="section_client">
+      <section class="section_client" id="client">
         <div class="container">
-          <div class="client_title_wrap">
+          <div class="client_header">
             <div>
               <p class="subtitle">Testimony</p>
-              <p class="title">What Our Client Says</p>
+              <h2 class="title">What Our Client Says</h2>
             </div>
             <div class="view_all_wrap">
               <a class="view_all_link" href="#">View All </a>
-              <a href="view_all_lin"><i class="ri-arrow-right-line"></i></a>
+              <ion-icon
+                class="arrow_icon"
+                name="arrow-forward-outline"
+              ></ion-icon>
             </div>
           </div>
-          <div class="slider">
-            <div class="client_card">
-              <img class="client_pic" src="assets/profile-pic-1.jpg" alt="" />
-              <div>
-                <p class="client_name">Andress Mount</p>
-                <div class="client_ratings">
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-half-fill"></i></span>
+          <!-- Slider main container -->
+          <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <div class="client__card">
+                  <img src="assets/profile-pic-1.jpg" alt="client">
+                  <div>
+                    <h4>Andress Mount</h4>
+                    <div class="client__ratings">
+                      <span><ion-icon name="star"></ion-icon></span>
+                      <span><ion-icon name="star"></ion-icon></span>
+                      <span><ion-icon name="star"></ion-icon></span>
+                      <span><ion-icon name="star"></ion-icon></span>
+                      <span><ion-icon name="star-outline"></ion-icon></span>
+                    </div>
+                    <p class="text">
+                      I was hesitant about the value of digital marketing for my
+                      local business, but PixelPulse proved me wrong. They boosted
+                      our local search visibility, and now we're attracting more
+                      customers than ever.
+                    </p>
+                  </div>
                 </div>
-                <p>
-                  I was hesitant about the value of digital marketing for my
-                  local business, but PixelPulse proved me wrong. They boosted
-                  our local search visibility, and now we're attracting more
-                  customers than ever.
+              </div>
+              <div class="swiper-slide">
+                <div class="client__card">
+                  <img src="assets/profile-pic-2.jpg" alt="client">
+                  <div>
+                    <h4>Sarah Anderson</h4>
+                    <div class="client__ratings">
+                      <span><ion-icon name="star"></ion-icon></span>
+                      <span><ion-icon name="star"></ion-icon></span>
+                      <span><ion-icon name="star"></ion-icon></span>
+                      <span><ion-icon name="star-half-outline"></ion-icon></span>
+                      <span><ion-icon name="star-outline"></ion-icon></span>
+                    </div>
+                    <p class="text">
+                      Working with PixelPulse was a game-changer for our business.
+                      Their team designed a stunning website and devised a strategic
+                      digital marketing plan that significantly increased our online
+                      presence.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="client__card">
+                  <img src="assets/profile-pic-3.jpg" alt="client">
+                  <div>
+                    <h4>John Roberts</h4>
+                    <div class="client__ratings">
+                      <span><ion-icon name="star"></ion-icon></span>
+                      <span><ion-icon name="star"></ion-icon></span>
+                      <span><ion-icon name="star"></ion-icon></span>
+                      <span><ion-icon name="star"></ion-icon></span>
+                      <span><ion-icon name="star-outline"></ion-icon></span>
+                    </div>
+                    <p class="text">
+                      As a startup founder, I needed a digital partner I could trust
+                      to bring my vision to life. PixelPulse did just that. They
+                      built a user-friendly app that perfectly aligned with our
+                      brand.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="client__card">
+                  <img src="assets/profile-pic-4.jpg" alt="client">
+                  <div>
+                    <h4>David Ramirez</h4>
+                    <div class="client__ratings">
+                      <span><ion-icon name="star"></ion-icon></span>
+                      <span><ion-icon name="star"></ion-icon></span>
+                      <span><ion-icon name="star"></ion-icon></span>
+                      <span><ion-icon name="star"></ion-icon></span>
+                      <span><ion-icon name="star-half-outline"></ion-icon></span>
+                    </div>
+                    <p class="text">
+                      PixelPulse went above and beyond in helping our nonprofit
+                      organization establish a strong online presence. They designed
+                      a beautiful website and helped us set up effective online
+                      fundraising campaigns.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section_news" id="news">
+        <div class="container">
+          <p class="subtitle">News</p>
+          <h2 class="title">Read Our News</h2>
+          <div class="grid_news">
+            <div class="news_card">
+              <img
+                src="assets/news-1.jpg"
+                alt="Three people talking about something in front of laptop"
+              />
+              <div>
+                <p class="news_title">The Art of User-Centered Web Design</p>
+              <p class="text">
+                Explore the principles and techniques behind creating
+                user-centered web designs that prioritize the needs and
+                preferences of your target audience.
+              </p>
+              <div class="view_all_wrap">
+                <a class="view_all_link" href="#">View All </a>
+                  <ion-icon class="arrow_icon" name="arrow-forward-outline"></ion-icon>
+              </div>
+              </div>
+              
+            </div>
+            <div class="news_card">
+              <img src="assets/news-2.jpg" alt="A man is using a laptop." />
+              <div>
+                <p class="news_title">Mastering the Mobile-First Approach</p>
+                <p class="text">
+                  Discover why mobile optimization is crucial, explore best
+                  practices, and understand how to create responsive designs.
                 </p>
+                <div class="view_all_wrap">
+                  <a class="view_all_link" href="#">View All </a>
+                  <ion-icon class="arrow_icon" name="arrow-forward-outline"></ion-icon>
+                </div>
+              </div>
+            </div>
+            <div class="news_card">
+              <img src="assets/news-3.jpg" alt="A woman is using a laptop." />
+              <div>
+                <p class="news_title">Digital Marketing Demystified</p>
+                <p class="text">
+                  Uncover the secrets of effective digital marketing
+                  strategies that can elevate your online presence.
+                </p>
+                <div class="view_all_wrap">
+                  <a class="view_all_link" href="#">View All </a>
+                  <ion-icon class="arrow_icon"  name="arrow-forward-outline"></ion-icon>
+                </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <section class="section_contact" id="contact">
+        <div class="container">
+          <div class="contact_grid">
+            <p class="contact_title">
+              Would Like To Start Your Project With Us
+            </p>
+            <button class="btn">Get in Touch</button>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="container">
+          <div class="footer_grid">
+            <div>
+              <a class="top_anchor" href="#">PixelPulse</a>
+            </div>
+            <div class="footer_contact">
+              <h4 class="footer_title">Our Contact</h4>
+              <ul class="contact_info">
+                <li class="text">402, St. Street, NY City</li>
+                <li class="text">+91 9876543210</li>
+                <li class="text">pixelpulse@gmail.com</li>
+              </ul>
+            </div>
+            <div class="footer_about">
+              <h4 class="footer_title">About Us</h4>
+              <p class="text">
+                Whether you're a startup looking to make your mark or an
+                established brand seeking a digital facelift, PixelPulse is your
+                dedicated partner in navigating the digital realm.
+              </p>
+            </div>
+            <div class="footer_subscribe">
+              <h4 class="footer_title">Subscribe</h4>
+              <form class="email_input" action="/">
+                <input type="text" placeholder="Your Email" />
+                <ion-icon name="paper-plane-outline"></ion-icon>
+              </form>
+
+              <h4 class="footer_title social">Follow Us</h4>
+              <div class="social_icons">
+                <ion-icon name="logo-facebook"></ion-icon>
+                <ion-icon name="logo-linkedin"></ion-icon>
+                <ion-icon name="logo-instagram"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="copyright">
+        <p>Copyright © 2024 Web Design Mastery. All rights reserved.</p>
+      </div>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script src="script.js"></script>
   </body>
 </html>

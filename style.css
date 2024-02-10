@@ -1,97 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
-
-:root {
-  --primary-color: #face59;
-  --secondary-color: #f8f8f8;
-  --text-dark: #111827;
-  --text-light: #6b7280;
-  --white: #ffffff;
-  --max-width: 1200px;
-  --header-font: "Playfair Display", serif;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-html {
-  /* font-size: 10px;
-	10px / 16px = 0.625 =62.5%
-	Percentage of user's browser font-size setting */
-  font-size: 62.5%;
-  overflow-x: hidden;
-  /* scroll-behavior: smooth; */
-}
-
-body {
-  line-height: 1;
-  font-weight: 500;
-  color: var(--text-light);
-  /* Only works if there is nothing absolutely positiond in relation to body */
-  overflow-x: hidden;
-  font-family: "Poppins", sans-serif;
-}
-
-p {
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-}
-/* 이미지 그리드안에 알맞게 넣기 위해 필요 */
-img {
-  display: flex;
-  width: 100%;
-}
-
-.container {
-  margin: 0 auto;
-  padding: 0 1.6rem;
-  max-width: 120rem;
-}
-
-.btn {
-  font-size: 1.6rem;
-  color: var(--text-dark);
-  font-weight: 500;
-  background-color: var(--primary-color);
-  padding: 1.2rem 3.5rem;
-  border: none;
-  border-radius: 2px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-}
-.title {
-  font-size: 4rem;
-  font-weight: 500;
-  font-family: var(--header-font);
-  color: var(--text-dark);
-  line-height: 1.4;
-  margin: 0;
-}
-
-.subtitle {
-  font-size: 2rem;
-  margin-bottom: 1.6rem;
-  color: var(--text-light);
-}
-
-.text {
-  font-size: 1.6rem;
-  color: var(--text-light);
-  line-height: 1.5;
-  font-weight: 400;
-}
-
 /* **************************************** */
 /*  Header */
 /* **************************************** */
-.header {
+.header_container {
+  max-width: 120rem;
   margin: 0 auto;
-  padding: 3.2rem 3.2rem;
+}
+
+.header {
+  /* margin: 0 auto; */
+  padding: 3.2rem 1.6rem;
+  width: 100%;
+  position: relative;
   display: flex;
   justify-content: space-between;
-  max-width: 120rem;
 }
 
 .nav_logo a {
@@ -104,7 +25,7 @@ img {
 
 .nav_links {
   display: flex;
-  gap: 2rem;
+  gap: 3.2rem;
 }
 
 .link {
@@ -117,8 +38,40 @@ img {
   font-size: 1.6rem;
 }
 
-.nav_menu_btn {
+/* mbile nav */
+.btn_mobile_nav {
+  background-color: none;
+  cursor: pointer;
   display: none;
+}
+
+.icon_mobile_nav {
+  height: 3rem;
+  width: 3rem;
+  color: var(--text-dark);
+}
+
+.icon_mobile_nav[name="close-outline"] {
+  display: none;
+}
+/* Sticky nav */
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 120rem;
+  height: 8rem;
+  /* padding-top: 0; */
+  /* padding-bottom: 0; */
+  background-color: rgba(255, 255, 255, 0.97);
+  /* box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 8px -2px gray; */
+  box-shadow: 0px 12px 13px -20px #111;
+  z-index: 999;
+}
+
+.sticky .section_home {
+  margin-top: 8rem;
 }
 
 /* **************************************** */
@@ -152,12 +105,13 @@ img {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 40rem;
-  gap: 2rem;
+  gap: 3.2rem;
 }
 
 .home_img {
   height: 100%;
   object-fit: cover;
+  z-index: -1;
 }
 
 .mb1 {
@@ -181,13 +135,16 @@ img {
 
 .about_img {
   max-width: 45rem;
+  justify-self: center;
+  height: 100%;
+  object-fit: cover;
 }
 
 .about_description {
   margin: 3.2rem 0;
 }
 
-.flex_about {
+.about_cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 3.2rem;
@@ -196,35 +153,44 @@ img {
 }
 
 .about_card {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
   gap: 1.6rem;
 }
 
-/* .ri-pen-nib-line,
-.ri-layout-masonry-line,
-.ri-checkbox-line {
-  height: 5.8rem;
-  width: 5.8rem;
-} */
-
 .circle {
-  /* height: 3rem;
-  width: 3rem; */
-  padding: 1.5rem;
+  height: 5rem;
+  width: 5rem;
   font-size: 1.6rem;
   border-radius: 50%;
-  background-color: gray;
-  /* align-items: top; */
+  background-color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card_icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  color: var(--text-dark);
 }
 
 .card_title {
-  font-size: 2rem;
+  font-size: 1.9rem;
   color: var(--text-dark);
   line-height: 1.5;
   font-weight: 500;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1rem;
 }
 
+.about_card div .text {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.about_content {
+  font-size: 1.6rem;
+}
 /* **************************************** */
 /* section_portfolio */
 /* **************************************** */
@@ -233,7 +199,7 @@ img {
   padding: 8rem 0;
 }
 
-.gride_porfolio {
+.grid_portfolio {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 3.2rem;
@@ -242,15 +208,21 @@ img {
 .view_all_wrap {
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
-.view_all_link,
-.ri-arrow-right-line {
+.view_all_link {
   font-size: 1.6rem;
   color: var(--primary-color);
   line-height: 1.5;
   font-weight: 400;
   text-decoration: none;
+}
+
+.arrow_icon {
+  height: 2rem;
+  width: 2rem;
+  color: var(--primary-color);
 }
 
 .portfolio_pictures {
@@ -273,21 +245,218 @@ img {
   padding: 8rem 0;
 }
 
-.client_title_wrap {
+.client_header {
   display: flex;
   justify-content: space-between;
-}
-
-.view_all_wrap {
   align-items: center;
 }
 
-.slider {
+.swiper {
+  margin-top: 6.4rem;
+  width: 100%;
+}
+
+.swiper-slide {
+  max-width: 50rem;
+  /* margin-right: 3rem;  js파일에 들어가있음 */
+}
+
+.client__card {
+  padding: 3.2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+  background-color: var(--secondary-color);
+}
+
+.client__card img {
+  max-width: 7rem;
+  border-radius: 100%;
+}
+
+.client__card h4 {
+  font-size: 1.9rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.client__ratings {
+  color: goldenrod;
+}
+
+.client__ratings span ion-icon {
+  height: 1.6rem;
+  width: 1.6rem;
+  margin-top: 1rem;
+}
+
+/* .client__card p {
+  margin-top: 1.6rem;
+  color: var(--text-light);
+} */
+/* **************************************** */
+/* section_news */
+/* **************************************** */
+
+.section_news {
+  padding: 8rem 0;
+}
+
+.grid_news {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6.4rem;
   margin-top: 6.4rem;
 }
 
-.client_pic {
-  height: 7rem;
-  width: 7rem;
-  border-radius: 3.5rem;
+.news_card {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.news_card:first-child {
+  grid-area: 1/1/3/2;
+}
+
+.news_card:not(:first-child) {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  display: grid;
+  column-gap: 3.2rem;
+}
+
+.news_title {
+  font-size: 1.9rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  margin-top: 3.2rem;
+}
+.news_card:first-child img {
+  object-fit: cover;
+}
+
+.news_card:not(:first-child) img {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* **************************************** */
+/* section_contact */
+/* **************************************** */
+
+.section_contact {
+  padding: 8rem 0;
+  background-color: var(--secondary-color);
+}
+
+.contact_grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 3.2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact_title {
+  font-size: 5.6rem;
+  font-weight: 500;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+  line-height: 1.4;
+  max-width: 80rem;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+/* **************************************** */
+/* footer */
+/* **************************************** */
+footer {
+  padding: 8rem 0;
+}
+
+.footer_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 2rem;
+}
+
+.top_anchor {
+  font-size: 2.4rem;
+  font-family: var(--header-font);
+  text-decoration: none;
+  color: var(--text-dark);
+}
+
+.footer_contact ul li {
+  list-style: none;
+}
+
+.footer_title {
+  font-size: 1.9rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.footer_title {
+  margin-bottom: 2.4rem;
+}
+
+.footer_subscribe input {
+  margin-bottom: 3.2rem;
+}
+
+.social {
+  margin-bottom: 0.5rem;
+}
+
+.social_icons {
+  display: flex;
+  gap: 2rem;
+}
+
+.email_input {
+  position: relative;
+}
+
+.email_input input {
+  padding: 1rem;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 1.6rem;
+  border: 1px solid var(--text-light);
+}
+
+.email_input ion-icon {
+  position: absolute;
+  height: 2.5rem;
+  width: 2.5rem;
+  right: 0;
+  top: -0.2rem;
+  padding: 10px;
+  color: var(--text-light);
+}
+
+.social_icons ion-icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  color: var(--text-dark);
+}
+
+/* **************************************** */
+/* copyright */
+/* **************************************** */
+.copyright {
+  padding: 1.6rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.copyright p {
+  font-size: 1.3rem;
+  margin: 0;
 }

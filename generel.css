@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #face59;
+  --secondary-color: #f8f8f8;
+  --text-dark: #111827;
+  --text-light: #6b7280;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Playfair Display", serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* font-size: 10px;
+	10px / 16px = 0.625 =62.5%
+	Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+  overflow-x: hidden;
+  /* scroll-behavior: smooth; */
+}
+
+body {
+  line-height: 1;
+  font-weight: 500;
+  color: var(--text-light);
+  /* Only works if there is nothing absolutely positiond in relation to body */
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+p {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+/* 이미지 그리드안에 알맞게 넣기 위해 필요 */
+img {
+  display: flex;
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 1.6rem;
+  max-width: 120rem;
+}
+
+.btn {
+  font-size: 1.6rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  background-color: var(--primary-color);
+  padding: 1.2rem 3.5rem;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  display: inline-block;
+  max-height: 4.2rem;
+  display: inline-block;
+}
+
+/* contact button 그리드 박스에 맞춰서 크기변함. 그래서 버튼 height 를 정해줌. 그러나 버튼의 패딩값만설정해주고 그에 맞춰서 항상 최소 크기를 갖는 버튼은 어떻게 만들지? */
+.title {
+  font-size: 4rem;
+  font-weight: 500;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 2rem;
+  margin-bottom: 1.6rem;
+  color: var(--text-light);
+  font-weight: 400;
+}
+
+.text {
+  font-size: 1.6rem;
+  color: var(--text-light);
+  line-height: 1.5;
+  font-weight: 400;
+}
