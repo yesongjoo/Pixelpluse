@@ -65,7 +65,7 @@ allLinks.forEach(function (link) {
 // ////////////////////////////////////////////////////
 // Make mobile nav work
 const btnNavEl = document.querySelector(".btn_mobile_nav");
-const headerEl = document.querySelector(".header");
+const headerEl = document.querySelector(".header_container");
 const navLinksEl = document.querySelectorAll(".nav_links");
 
 btnNavEl.addEventListener("click", function () {
@@ -86,7 +86,7 @@ const obs = new IntersectionObserver(
     const ent = entries[0];
 
     if (ent.isIntersecting === false) {
-      document.querySelector(".header").classList.add("sticky");
+      document.querySelector(".header_container").classList.add("sticky");
     }
   },
   {
@@ -95,3 +95,10 @@ const obs = new IntersectionObserver(
   }
 );
 obs.observe(sectionHomeEl);
+
+///////////////////////////////////////////////////////////
+// set current year
+const yearEl = document.querySelector(".year");
+const currentYear = new Date().getFullYear();
+console.log(currentYear);
+yearEl.textContent = currentYear;

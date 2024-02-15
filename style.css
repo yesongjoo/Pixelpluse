@@ -1,12 +1,12 @@
 /* **************************************** */
 /*  Header */
 /* **************************************** */
-.header_container {
+.header {
   max-width: 120rem;
   margin: 0 auto;
 }
 
-.header {
+.header_container {
   /* margin: 0 auto; */
   padding: 3.2rem 1.6rem;
   width: 100%;
@@ -59,7 +59,7 @@
 .sticky {
   position: fixed;
   top: 0;
-  width: 120rem;
+  max-width: 120rem;
   height: 8rem;
   /* padding-top: 0; */
   /* padding-bottom: 0; */
