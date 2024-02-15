@@ -88,10 +88,15 @@ const obs = new IntersectionObserver(
     if (ent.isIntersecting === false) {
       document.querySelector(".header_container").classList.add("sticky");
     }
+
+    if (ent.isIntersecting === true) {
+      document.querySelector(".header_container").classList.remove("sticky");
+    }
   },
   {
     root: null,
     threshold: 0,
+    rootMargin: "-80px",
   }
 );
 obs.observe(sectionHomeEl);
